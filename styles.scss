@@ -1,0 +1,538 @@
+* {
+    box-sizing: border-radius-border-box;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'FKT Gnarly';
+    src: url('fonts/FKTGnarly_Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.footer__box-numbers {
+    display: flex;
+    flex-direction: column;
+
+}
+
+$color-bg: #f7f3ed;
+$color-title: #3e3832;
+$color-grid-gap: rgba(229, 221, 208, 0.5);
+
+$grid-columns-desktop: 3;
+$grid-gap: 30px;
+$border-radius: 8px;
+
+$bg-color: #f6f3ed;
+$card-bg: #e5ddd0;
+$btn-color: #b89a7a;
+$text-dark: #3e3832;
+
+.header {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        cursor: pointer;
+    }
+
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__mark-home {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 100%;
+        text-align: center;
+        color: #2b2b2b;
+        list-style: none;
+        cursor: pointer;
+        padding: 17px 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: #a9825a;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+
+    &__mark-rooms {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 100%;
+        text-align: center;
+        color: #2b2b2b;
+        list-style: none;
+        cursor: pointer;
+        padding: 17px 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: #a9825a;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+
+    &__mark-rooms {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 100%;
+        text-align: center;
+        color: #2b2b2b;
+        list-style: none;
+        cursor: pointer;
+        padding: 17px 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: #a9825a;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+
+
+
+    &__mark-gallery {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 100%;
+        text-align: center;
+        color: #2b2b2b;
+        list-style: none;
+        cursor: pointer;
+        padding: 17px 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: #a9825a;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+
+    &__mark-contact {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 100%;
+        text-align: center;
+        color: #2b2b2b;
+        list-style: none;
+        cursor: pointer;
+        padding: 17px 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: #a9825a;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+
+}
+
+.hero {
+    background-image: url(./img/hero.png);
+    height: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__title {
+        width: 811px;
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 90px;
+        text-align: center;
+        color: #fff;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__btn-rooms {
+        padding: 10px 30px;
+        padding: 10px 30px;
+        cursor: pointer;
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(90deg, #a9825a 0%, #433424 100%);
+        border: none;
+        border-radius: 10px;
+    }
+
+    &__btn-gallery {
+        padding: 10px 30px;
+        cursor: pointer;
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(90deg, #a9825a 0%, #433424 100%);
+        border: none;
+        border-radius: 10px;
+    }
+
+}
+
+.info {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    &__box {
+        // max-width: 363px;
+        // height: 185px;
+        background: #ddd2c4;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 20px;
+
+        &-title {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+            color: #1f1b18;
+        }
+
+        &-dec {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+            color: #3a342e;
+            line-height: 1.4;
+            margin-top: auto;
+        }
+
+        &-dec1 {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+            color: #3a342e;
+            line-height: 1.4;
+            margin-bottom: 36px;
+        }
+    }
+
+    &__img {
+        margin-bottom: 20px;
+        // object-fit: contain;
+    }
+}
+
+.photoes {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    &__box {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+
+        &-img {
+            width: 478px;
+            height: 319px;
+            border-radius: 20px;
+        }
+    }
+
+    &__title {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 64%;
+        letter-spacing: 0.04em;
+        text-align: center;
+        color: #1a1a1a;
+    }
+}
+
+.footer {
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__map {
+        width: 495px;
+        height: 590px;
+        border-radius: 20px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 10px;
+        width: 488px;
+        height: 288px;
+        box-shadow: 0 0 16px 0 rgba(255, 237, 237, 0.25);
+        background: #ddd2c4;
+        text-align: center;
+        cursor: pointer;
+
+        &-title {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+            color: #1f1b18;
+        }
+
+        &-minibox {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+            margin-left: 65px;
+
+
+            &-dec {
+                font-family: 'FKT Gnarly', sans-serif;
+                font-weight: 400;
+                font-size: 24px;
+                text-align: center;
+                color: #3a342e;
+                line-height: 1.4;
+                margin: 0;
+                /* Убирает стандартные отступы сверху и снизу */
+                line-height: 1.2;
+                /* Регулирует плотность строк */
+                white-space: nowrap
+            }
+        }
+    }
+
+    &__boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 200px;
+    }
+
+    &__boxes1 {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__boxes2 {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.room-grid {
+    display: grid;
+    // Делаем ровно 3 колонки, каждая занимает 1 часть места
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px;
+    background-color: $bg-color;
+
+    // Чтобы на маленьких экранах карточки не слипались
+    @media (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+
+.room-card {
+    background-color: $card-bg;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); // Легкая тень для объема
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 484 / 323; // Пропорции как на твоем скрине
+        background-color: #ccc; // Заглушка, пока нет фото
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__footer {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 550;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: #1f1b18;
+    }
+
+    &__button {
+        display: inline-block;
+        background-color: $btn-color;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 8px 18px;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        font-family: 'FKT Gnarly', sans-serif;
+
+
+        &:hover {
+            background-color: darken($btn-color, 15%);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    background-color: $color-bg;
+}
+
+.gallery {
+    padding: 60px 40px;
+    text-align: center;
+
+    &-title {
+        font-size: 34px;
+        font-weight: 400;
+        color: $color-title;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        font-family: 'FKT Gnarly', sans-serif;
+    }
+
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat($grid-columns-desktop, 1fr);
+        gap: $grid-gap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &-item {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: $border-radius;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        background-color: #fff;
+        border: 1px solid #e5ddd0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        &:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-page {
+            padding: 30px 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+}
+
+.get {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+
+    &__title {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 500;
+        font-size: 64px;
+        line-height: 79%;
+        letter-spacing: -0.02em;
+        color: #1f1b18;
+    }
+
+}
