@@ -32,8 +32,8 @@
         <section class="hero">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title"> Welcome to 
-                        Piligrim House </h1>
+                    <h1 class="hero__title"> Welcome to <br>      
+                        Pilgrim House </h1>
                     <div class="hero__btns">
                         <button class="hero__btn-rooms" type="button" title="Book Now">Rooms</button>
                         <button class="hero__btn-gallery" type="button" title="Book Now">Gallery</button>
@@ -47,30 +47,30 @@
                 <div class="info__content">
 
                     <div class="info__box">
-                        <img style="width: 34px;" src="./img/kitchen.png" alt="" class="info__img">
-                        <h3 class="info__box-title">Kitchen </h3>
-                        <p class="info__box-dec">Fully equipped kitchen with modern appliances and ample workspace for
-                            meal preparation. <span class="info__box-dec-highlight" id="kitchen-more">More info</span></p>
+                        <img style="width: 34px;" src="./img/dish.svg" alt="" class="info__img">
+                        <h3 class="info__box-title">Dining room </h3>
+                        <p class="info__box-dec">A spacious hall with flexible furniture for 28–35 persons. The space
+                            can easily be transformed to accommodate any format—from a classic banquet to a casual
+                            buffet. <span class="info__box-dec-highlight" id="kitchen-more">More info</span></p>
                     </div>
 
                     <div class="info__box">
                         <img style="width: 45px;" src="./img/bench.svg" alt="" class="info__img">
                         <h3 class="info__box-title">Territory</h3>
-                        <p class="info__box-dec">Covered parking and a cozy outdoor patio with tables behind the building. Benches throughout the grounds for comfortable relaxation.</p>
+                        <p class="info__box-dec">Covered parking, security alarm, BBQ zone and a cozy outdoor patio with
+                            tables behind the building. Benches throughout the grounds for comfortable relaxation.</p>
                     </div>
 
                     <div class="info__box">
                         <img style="width: 34px;" src="./img/hall.png" alt="" class="info__img">
                         <h3 class="info__box-title">Conference Hall</h3>
-                        <p class="info__box-dec">A modern conference hall designed for business events, offering comfort
-                            and fully equipped facilities</p>
+                        <p class="info__box-dec">A modern conference hall seating 35–40 people and fully equipped with technical features. This flexible space easily adapts to any event format..</p>
                     </div>
 
                     <div class="info__box">
                         <img style="width: 34px;" src="./img/badroom.png" alt="" class="info__img">
                         <h3 class="info__box-title">Comfortable Bedrooms</h3>
-                        <p class="info__box-dec1">Rooms where comfort and coziness create a calm and pleasant atmosphere
-                            for relaxation.</p>
+                        <p class="info__box-dec1">Cozy rooms with soft lighting and thoughtful decor create an atmosphere of complete tranquility. An ideal space for those who value peace and quiet and quality rest.</p>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 <div class="modal__info">
                     <div class="modal__item">
                         <span class="modal__label">Meals (breakfast, lunch, dinner)</span>
-                        <span class="modal__price">1200 som per person</span>
+                        <span class="modal__price">1300 som per person</span>
                     </div>
                     <div class="modal__item">
                         <span class="modal__label">Coffee-break</span>
@@ -142,7 +142,7 @@
                                 <img src="./img/adress.png" alt="">
                                 <div class="footer__box-numbers">
                                     <p class="footer__box-minibox-dec">Bolnichnaya 62</p>
-                                    <p class="footer__box-minibox-dec">Bishkek, Kyrgyzstan</p>
+                                    <p class="footer__box-minibox-dec">Tash Dobo, Kyrgyzstan</p>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                             <div class="footer__box-minibox">
                                 <img src="./img/whatsapp.png" alt="">
                                 <div class="footer__box-numbers">
-                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (995) 18 05 71</p>
                                     <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
                                 </div>
                             </div>
@@ -240,8 +240,9 @@
             icon: './img/whatsapp.png',
             title: 'WhatsApp',
             numbers: [
-                { num: '+996 (550) 98 21 21', clean: '996550982121', label: 'Основной номер' },
-                { num: '+996 (555) 52 08 58', clean: '996555520858', label: 'Основной номер' }
+                { num: '+996 (995) 18 05 71', clean: '996995180571', label: 'Основной номер' },
+                { num: '+996 (550) 98 21 21', clean: '996550982121', label: 'Основной номер' }
+
             ],
             getUrl: (clean) => `https://wa.me/${clean}`
         },
@@ -309,38 +310,38 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-    const moreBtn = document.getElementById('kitchen-more');
-    const modal = document.getElementById('kitchen-modal');
-    const closeBtn = document.getElementById('close-modal');
+        const moreBtn = document.getElementById('kitchen-more');
+        const modal = document.getElementById('kitchen-modal');
+        const closeBtn = document.getElementById('close-modal');
 
-    // Открытие модального окна
-    moreBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // блокируем скролл
-    });
+        // Открытие модального окна
+        moreBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // блокируем скролл
+        });
 
-    // Закрытие по кнопке
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'visible';
-    });
-
-    // Закрытие при клике вне окна
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        // Закрытие по кнопке
+        closeBtn.addEventListener('click', () => {
             modal.classList.remove('active');
             document.body.style.overflow = 'visible';
-        }
-    });
+        });
 
-    // Закрытие по клавише ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'visible';
-        }
+        // Закрытие при клике вне окна
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'visible';
+            }
+        });
+
+        // Закрытие по клавише ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'visible';
+            }
+        });
     });
-});
 </script>
 
 </html>
