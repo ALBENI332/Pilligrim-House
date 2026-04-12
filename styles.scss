@@ -1,5 +1,6 @@
 * {
-    box-sizing: border-radius-border-box;
+    box-sizing: border-box;
+    font-family: 'FKT Gnarly', sans-serif;
 }
 
 .container {
@@ -32,6 +33,13 @@ $bg-color: #f6f3ed;
 $card-bg: #e5ddd0;
 $btn-color: #b89a7a;
 $text-dark: #3e3832;
+
+$bg-color: #F8F5EE;
+$main-text: #2D2D2D;
+$secondary-text: #707070;
+$tag-bg: #AC8A67;
+$desc-bg: #E4D8CE;
+$accent-border: #AC8A67;
 
 .header {
     &__content {
@@ -314,67 +322,213 @@ $text-dark: #3e3832;
         border-radius: 20px;
     }
 
-    &__box {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        border-radius: 10px;
-        width: 488px;
-        height: 288px;
-        box-shadow: 0 0 16px 0 rgba(255, 237, 237, 0.25);
-        background: #ddd2c4;
-        text-align: center;
-        cursor: pointer;
-
-        &-title {
-            font-family: 'FKT Gnarly', sans-serif;
-            font-weight: 400;
-            font-size: 48px;
-            line-height: 100%;
-            letter-spacing: -0.02em;
-            text-transform: capitalize;
-            color: #1f1b18;
-        }
-
-        &-minibox {
+        &__box {
             display: flex;
+            flex-direction: column;
             gap: 20px;
-            align-items: center;
+            border-radius: 10px;
+            width: 488px;
+            height: 288px;
+            box-shadow: 0 0 16px 0 rgba(255, 237, 237, 0.25);
+            background: #ddd2c4;
             text-align: center;
-            margin-left: 65px;
+            cursor: pointer;
 
-
-            &-dec {
+            &-title {
                 font-family: 'FKT Gnarly', sans-serif;
                 font-weight: 400;
-                font-size: 24px;
-                text-align: center;
-                color: #3a342e;
-                line-height: 1.4;
-                margin: 0;
-                /* Убирает стандартные отступы сверху и снизу */
-                line-height: 1.2;
-                /* Регулирует плотность строк */
-                white-space: nowrap
+                font-size: 48px;
+                line-height: 100%;
+                letter-spacing: -0.02em;
+                text-transform: capitalize;
+                color: #1f1b18;
             }
+
+            &-minibox {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                text-align: center;
+                margin-left: 65px;
+
+
+                &-dec {
+                    font-family: 'FKT Gnarly', sans-serif;
+                    font-weight: 400;
+                    font-size: 24px;
+                    text-align: center;
+                    color: #3a342e;
+                    line-height: 1.4;
+                    margin: 0;
+                    /* Убирает стандартные отступы сверху и снизу */
+                    line-height: 1.2;
+                    /* Регулирует плотность строк */
+                    white-space: nowrap
+                }
+            }
+        }
+
+        &__boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            row-gap: 200px;
+        }
+
+        &__boxes1 {
+            display: flex;
+            
+            gap: 20px;
+        }
+
+        &__boxes2 {
+            display: flex;
+            
+            gap: 20px;
+        }
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 27, 24, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+
+        .modal-window {
+            transform: scale(1);
+        }
+    }
+}
+
+.modal-window {
+    background: #f5ede3;
+    border-radius: 20px;
+    padding: 36px 40px 32px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    border: 1.5px solid #c9b8a4;
+    transform: scale(0.92);
+    transition: transform 0.2s ease;
+}
+
+.modal-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #ddd2c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+
+    img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.modal-title {
+    font-family: 'FKT Gnarly', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #1f1b18;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.modal-subtitle {
+    font-family: 'FKT Gnarly', sans-serif;
+    font-size: 16px;
+    color: #7a6a5a;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.modal-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #ddd2c4;
+    border: 1px solid #c9b8a4;
+    border-radius: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.15s, transform 0.1s;
+
+    &:hover {
+        background: #cfc3b4;
+        transform: translateX(3px);
+    }
+
+    &-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #f5ede3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #c9b8a4;
+        flex-shrink: 0;
+
+        img {
+            width: 20px;
+            height: 20px;
         }
     }
 
-    &__boxes {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        row-gap: 200px;
+    &-num {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-size: 20px;
+        color: #1f1b18;
+        display: block;
     }
 
-    &__boxes1 {
-        display: flex;
-        gap: 20px;
+    &-label {
+        font-size: 12px;
+        color: #7a6a5a;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        display: block;
+        margin-top: 2px;
     }
+}
 
-    &__boxes2 {
-        display: flex;
-        gap: 20px;
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #7a6a5a;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.15s;
+
+    &:hover {
+        background: #ddd2c4;
+        color: #1f1b18;
     }
 }
 
@@ -432,7 +586,15 @@ $text-dark: #3e3832;
         color: #1f1b18;
     }
 
-    &__button {
+    &__button-11,
+    &__button-12,
+    &__button-13,
+    &__button-21,
+    &__button-22,
+    &__button-23,
+    &__button-24,
+    &__button-25,
+    &__button-26 {
         display: inline-block;
         background-color: $btn-color;
         color: #ffffff;
@@ -535,4 +697,676 @@ body {
         color: #1f1b18;
     }
 
+}
+
+.room {
+    &__content {
+        display: flex;
+        gap: 39px;
+
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+
+
+        &-title {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+            color: #1f1b18;
+        }
+
+        &-subtitle {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+            color: #1f1b18;
+        }
+
+        &-win {
+            display: flex;
+            gap: 10px;
+
+            &-btn {
+                border-radius: 15px;
+                padding: 2px 20px;
+                background: #a9825a;
+                font-family: 'FKT Gnarly', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 144%;
+                text-align: center;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    background: #8a6e4a;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+.description {
+    border-radius: 8px;
+    padding: 18px 15px;
+    background: #ddd2c4;
+
+    &__title {
+        font-family: 'FKT Gnarly', sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+        color: #1f1b18;
+    }
+}
+
+.dec {
+    font-family: 'FKT Gnarly', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #3a342e;
+}
+
+.slider {
+    position: relative;
+    width: 500px;
+
+    .slides {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: 0.4s;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+
+        &.prev {
+            left: 10px;
+        }
+
+        &.next {
+            right: 10px;
+        }
+    }
+
+    .thumbnails {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+
+        img {
+            width: 70px;
+            height: 50px;
+            object-fit: cover;
+            opacity: 0.6;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &.active {
+                opacity: 1;
+                border: 2px solid #a67c52;
+            }
+        }
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+
+    span {
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: #1f1b18;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    &.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    &.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .burger {
+        display: flex;
+    }
+
+    .header__list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #f5ede3;
+        padding: 16px 20px;
+        gap: 4px;
+        border-bottom: 1px solid #c9b8a4;
+        z-index: 999;
+
+        &.open {
+            display: flex;
+        }
+    }
+
+    .header__content {
+        position: relative;
+    }
+}
+
+// ===== АДАПТИВ =====
+
+// Планшет (1024px)
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero__title {
+        font-size: 64px;
+        width: 100%;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__map {
+        width: 100%;
+        height: 350px;
+    }
+
+    .foter__boxes {
+        width: 100%;
+    }
+
+    .footer__boxes1,
+    .footer__boxes2 {
+        justify-content: center;
+    }
+
+    .footer__box {
+        width: 340px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .footer__box-title {
+        font-size: 36px;
+    }
+
+    .footer__box-minibox {
+        margin-left: 20px;
+    }
+
+    .footer__box-minibox-dec {
+        font-size: 18px;
+    }
+
+    .footer__boxes {
+        row-gap: 20px;
+        justify-content: center;
+    }
+
+    .photoes__box-img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .info__content {
+        flex-wrap: wrap;
+    }
+
+    .info__box {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+// Мобильный (600px)
+@media (max-width: 600px) {
+    .header__list {
+        gap: 8px;
+    }
+
+    .header__mark-home,
+    .header__mark-rooms,
+    .header__mark-gallery,
+    .header__mark-contact {
+        font-size: 14px;
+        padding: 10px 6px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .hero {
+        height: 600px;
+    }
+
+    .hero__title {
+        font-size: 40px;
+        width: 100%;
+    }
+
+    .hero__btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info__box {
+        flex: 1 1 100%;
+    }
+
+    .photoes__box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photoes__box-img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .photoes__title {
+        font-size: 28px;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__map {
+        width: 100%;
+        height: 280px;
+    }
+
+    .footer__boxes1,
+    .footer__boxes2 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer__box {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+    }
+
+    .footer__box-title {
+        font-size: 28px;
+    }
+
+    .footer__box-minibox {
+        margin-left: 10px;
+        justify-content: center;
+    }
+
+    .footer__box-minibox-dec {
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .footer__boxes {
+        row-gap: 12px;
+    }
+
+    // Модалка на мобиле
+    .modal-window {
+        padding: 24px 20px 20px;
+        width: 95%;
+    }
+
+    .modal-title {
+        font-size: 26px;
+    }
+
+    .modal-btn {
+        padding: 12px 14px;
+    }
+
+    .modal-btn-num {
+        font-size: 16px;
+    }
+}
+
+// Маленький мобильный (380px)
+@media (max-width: 380px) {
+    .header__mark-home,
+    .header__mark-rooms,
+    .header__mark-gallery,
+    .header__mark-contact {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+
+    .hero__title {
+        font-size: 32px;
+    }
+
+    .footer__box-title {
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .get__title {
+        font-size: 48px;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__map {
+        width: 100%;
+        height: 350px;
+    }
+
+    .foter__boxes {
+        width: 100%;
+    }
+
+    .footer__boxes1,
+    .footer__boxes2 {
+        justify-content: center;
+    }
+
+    .footer__box {
+        width: 340px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .footer__box-title {
+        font-size: 36px;
+    }
+
+    .footer__box-minibox {
+        margin-left: 20px;
+    }
+
+    .footer__box-minibox-dec {
+        font-size: 18px;
+    }
+
+    .footer__boxes {
+        row-gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .get__title {
+        font-size: 32px;
+        text-align: center;
+        padding: 0 16px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .header__list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #f5ede3;
+        padding: 16px 20px;
+        gap: 4px;
+        border-bottom: 1px solid #c9b8a4;
+        z-index: 999;
+
+        &.open {
+            display: flex;
+        }
+    }
+
+    .header__content {
+        position: relative;
+    }
+
+    .footer__map {
+        width: 100%;
+        height: 260px;
+        border-radius: 12px;
+    }
+
+    .footer__boxes1,
+    .footer__boxes2 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer__box {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+    }
+
+    .footer__box-title {
+        font-size: 28px;
+    }
+
+    .footer__box-minibox {
+        margin-left: 10px;
+        justify-content: center;
+    }
+
+    .footer__box-minibox-dec {
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .footer__boxes {
+        row-gap: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .get__title {
+        font-size: 26px;
+    }
+
+    .footer__box-title {
+        font-size: 22px;
+    }
+
+    .footer__box-minibox-dec {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .room__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider {
+        width: 100%;
+    }
+
+    .slider .slides {
+        height: 400px;
+    }
+
+    .room__details {
+        width: 100%;
+    }
+
+    .room__details-title {
+        font-size: 32px;
+    }
+
+    .room__details-subtitle {
+        font-size: 20px;
+    }
+
+    .room__details-win {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider {
+        width: 100%;
+    }
+
+    .slider .slides {
+        height: 260px;
+    }
+
+    .slider .thumbnails img {
+        width: 52px;
+        height: 38px;
+    }
+
+    .room__details-title {
+        font-size: 26px;
+    }
+
+    .room__details-subtitle {
+        font-size: 16px;
+    }
+
+    .room__details-win {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .room__details-win-btn {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+
+    .description {
+        padding: 14px 12px;
+    }
+
+    .description__title {
+        font-size: 18px;
+    }
+
+    .dec {
+        font-size: 14px;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__map {
+        width: 100%;
+        height: 260px;
+        border-radius: 12px;
+    }
+
+    .footer__boxes1,
+    .footer__boxes2 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer__box {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+    }
+
+    .footer__box-title {
+        font-size: 28px;
+    }
+
+    .footer__box-minibox {
+        margin-left: 10px;
+        justify-content: center;
+    }
+
+    .footer__box-minibox-dec {
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .footer__boxes {
+        row-gap: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .slider .slides {
+        height: 200px;
+    }
+
+    .room__details-title {
+        font-size: 22px;
+    }
+
+    .footer__box-title {
+        font-size: 22px;
+    }
 }

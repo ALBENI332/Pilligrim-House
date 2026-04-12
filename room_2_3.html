@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <img src="./img/logo.png" alt="" class="header__logo">
+                <button class="burger" id="burger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header__list" id="headerList">
+                    <li class="header__mark-home">Home</li>
+                    <li style="background: #a9825a; color: white;" class="header__mark-rooms">Rooms</li>
+                    <li class="header__mark-gallery">Gallery</li>
+                    <li class="header__mark-contact">Contact</li>
+                </ul> 
+            </div>
+        </div>
+    </header>
+    <br><br><br><br>
+    <div class="room">
+        <div class="container">
+            <div class="room__content">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="./img/Room_2_3/DSC_0396.JPG" class="active" alt="Room 2/3 view 1" />
+                        <img src="./img/Room_2_3/DSC_0397.JPG" alt="Room 2/3 view 2" />
+                        <img src="./img/Room_2_3/DSC_0399.JPG" alt="Room 2/3 view 3" />
+                        <img src="./img/Room_2_3/DSC_0402.JPG" alt="Room 2/3 view 5" />
+                        <img src="./img/Room_2_3/DSC_0401.JPG" alt="Room 2/3 view 6" />
+                    </div>
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+
+                    <div class="thumbnails">
+                        <img src="./img/Room_2_3/DSC_0396.JPG" class="active" alt="Room 2/3 thumbnail 1" />
+                        <img src="./img/Room_2_3/DSC_0397.JPG" alt="Room 2/3 thumbnail 2" />
+                        <img src="./img/Room_2_3/DSC_0399.JPG" alt="Room 2/3 thumbnail 3" />
+                        <img src="./img/Room_2_3/DSC_0402.JPG" alt="Room 2/3 thumbnail 4" />
+                        <img src="./img/Room_2_3/DSC_0401.JPG" alt="Room 2/3 thumbnail 5" />
+                    </div>
+                </div>
+                <div class="room__details">
+                    <div class="room__details-main">
+                        <h2 class="room__details-title">Room 2/3</h2>
+
+                        <h3 class="room__details-subtitle">Second floor</h3>
+
+                        <div class="room__details-win">
+                            <button class="room__details-win-btn">Shower <img src="./img/All_rooms/shower.png"
+                                    alt=""></button>
+                            <button class="room__details-win-btn">Toilet <img src="./img/All_rooms/toilet.png"
+                                    alt=""></button>
+                            <button class="room__details-win-btn">Clean Towels <img src="./img/All_rooms/towel.png"
+                                    alt=""></button>
+                            <button class="room__details-win-btn">Wi-Fi <img src="./img/All_rooms/free.png"
+                                    alt=""></button>
+                        </div>
+
+                    </div>
+
+                    <div class="description">
+                        <h3 class="description_title">Description</h3>
+                        <p class="dec">Turquoise Room with a double and a single bed, private shower, work desk, and free Wi-Fi. Bright turquoise tones create a cozy and relaxing atmosphere. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <iframe class="footer__map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.2076330803125!2d74.57041711224339!3d42.72937587104077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389935b0e78e4359%3A0xfdf7c2ca2e9250ec!2sRetreat%20house%20%22House%20of%20Pilgrim%22!5e1!3m2!1sen!2skg!4v1775833616691!5m2!1sen!2skg"
+                    width="600" height="450" allowfullscreen=""
+                    title="Google Maps location of House of Pilgrim"></iframe>
+                <div class="foter__boxes">
+
+                    <div class="footer__boxes1">
+                        <div class="footer__box">
+                            <h3 class="footer__box-title">Address</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/adress.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer__box">
+                            <h3 class="footer__box-title">Whatsapp</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/whatsapp.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="footer__boxes2">
+                        <div class="footer__box">
+                            <h3 class="footer__box-title">Telegram</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/telegram.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer__box">
+                            <h3 class="footer__box-title">Сontacts</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/phone.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const slides = document.querySelectorAll(".slides img");
+        const thumbs = document.querySelectorAll(".thumbnails img");
+        const next = document.querySelector(".next");
+        const prev = document.querySelector(".prev");
+
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach(s => s.classList.remove("active"));
+            thumbs.forEach(t => t.classList.remove("active"));
+
+            slides[i].classList.add("active");
+            thumbs[i].classList.add("active");
+        }
+
+        next.addEventListener("click", () => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        });
+
+        prev.addEventListener("click", () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        });
+
+        thumbs.forEach((thumb, i) => {
+            thumb.addEventListener("click", () => {
+                index = i;
+                showSlide(index);
+            });
+        });
+
+        const homeBtn = document.querySelector('.header__mark-home');
+        const logoBtn = document.querySelector('.header__logo');
+        const galleryBtn = document.querySelector('.header__mark-gallery');
+        const heroContactBtn = document.querySelector('.header__mark-contact');
+        const roomsBtn = document.querySelector('.header__mark-rooms');
+        roomsBtn.addEventListener('click', () => {
+            window.location.href = 'rooms.html';
+        });
+        heroContactBtn.addEventListener('click', () => {
+            window.location.href = 'contact.html';
+        });
+
+        galleryBtn.addEventListener('click', () => {
+            window.location.href = 'gallery.html';
+        });
+
+        homeBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+        logoBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        function toggleMenu() {
+    document.getElementById('burger').classList.toggle('active');
+    document.getElementById('headerList').classList.toggle('open');
+}
+
+document.querySelectorAll('.header__list li').forEach(item => {
+    item.addEventListener('click', () => {
+        document.getElementById('burger').classList.remove('active');
+        document.getElementById('headerList').classList.remove('open');
+    });
+});
+    </script>
+</body>
+
+</html>
