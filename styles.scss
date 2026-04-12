@@ -332,6 +332,7 @@ $accent-border: #AC8A67;
             box-shadow: 0 0 16px 0 rgba(255, 237, 237, 0.25);
             background: #ddd2c4;
             text-align: center;
+            align-items: center;
             cursor: pointer;
 
             &-title {
@@ -349,7 +350,8 @@ $accent-border: #AC8A67;
                 gap: 20px;
                 align-items: center;
                 text-align: center;
-                margin-left: 65px;
+                margin-right: 65px;
+                margin-bottom: 30px;
 
 
                 &-dec {
@@ -360,9 +362,7 @@ $accent-border: #AC8A67;
                     color: #3a342e;
                     line-height: 1.4;
                     margin: 0;
-                    /* Убирает стандартные отступы сверху и снизу */
                     line-height: 1.2;
-                    /* Регулирует плотность строк */
                     white-space: nowrap
                 }
             }
@@ -1231,13 +1231,15 @@ body {
     }
 
     .footer__box-title {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .footer__box-minibox-dec {
         font-size: 13px;
     }
 }
+
+// ===== АДАПТИВ ROOM DETAIL PAGE =====
 
 @media (max-width: 1024px) {
     .room__content {

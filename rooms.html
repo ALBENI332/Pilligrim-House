@@ -108,20 +108,19 @@
                     width="600" height="450" allowfullscreen=""
                     title="Google Maps location of House of Pilgrim"></iframe>
                 <div class="foter__boxes">
-
                     <div class="footer__boxes1">
                         <div class="footer__box">
                             <h3 class="footer__box-title">Address</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/adress.png" alt="">
                                 <div class="footer__box-numbers">
-                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
-                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                    <p class="footer__box-minibox-dec">Bolnichnaya 62</p>
+                                    <p class="footer__box-minibox-dec">Bishkek, Kyrgyzstan</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openModal('whatsapp')">
                             <h3 class="footer__box-title">Whatsapp</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/whatsapp.png" alt="">
@@ -134,7 +133,7 @@
                     </div>
                     <br>
                     <div class="footer__boxes2">
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openModal('telegram')">
                             <h3 class="footer__box-title">Telegram</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/telegram.png" alt="">
@@ -145,7 +144,7 @@
                             </div>
                         </div>
 
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openModal('contacts')">
                             <h3 class="footer__box-title">Сontacts</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/phone.png" alt="">
@@ -157,9 +156,22 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
             </div>
         </div>
     </footer>
+     <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+        <div class="modal-window" id="modalWindow">
+            <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-subtitle" id="modalSubtitle">Выберите номер для связи</p>
+            <div class="modal-numbers" id="modalNumbers"></div>
+        </div>
+    </div>
     <br><br><br><br>
 </body>
 <script>
@@ -286,6 +298,66 @@
             document.getElementById('burger').classList.remove('active');
             document.getElementById('headerList').classList.remove('open');
         });
+    });
+
+     const modalConfigs = {
+        whatsapp: {
+            icon: './img/whatsapp.png',
+            title: 'WhatsApp',
+            numbers: [
+                { num: '+996 (550) 98 21 21', clean: '996550982121', label: 'Основной номер' },
+                { num: '+996 (555) 52 08 58', clean: '996555520858', label: 'Основной номер' }
+            ],
+            getUrl: (clean) => `https://wa.me/${clean}`
+        },
+        telegram: {
+            icon: './img/telegram.png',
+            title: 'Telegram',
+            numbers: [
+                { num: '+996 (550) 98 21 21', clean: '996550982121', label: 'Основной номер' },
+                { num: '+996 (555) 52 08 58', clean: '996555520858', label: 'Основной номер' }
+            ],
+            getUrl: (clean) => `https://t.me/+${clean}`
+        },
+        contacts: {
+            icon: './img/phone.png',
+            title: 'Позвонить',
+            numbers: [
+                { num: '+996 (550) 98 21 21', clean: '+996550982121', label: 'Основной номер' },
+                { num: '+996 (555) 52 08 58', clean: '+996555520858', label: 'Основной номер' }
+            ],
+            getUrl: (clean) => `tel:${clean}`
+        }
+    };
+
+    function openModal(type) {
+        const cfg = modalConfigs[type];
+        document.getElementById('modalIcon').innerHTML = `<img src="${cfg.icon}" alt="${cfg.title}">`;
+        document.getElementById('modalTitle').textContent = cfg.title;
+
+        document.getElementById('modalNumbers').innerHTML = cfg.numbers.map(n => `
+        <button class="modal-btn" onclick="window.location.href='${cfg.getUrl(n.clean)}'">
+            <div class="modal-btn-icon"><img src="${cfg.icon}" alt=""></div>
+            <div>
+                <span class="modal-btn-num">${n.num}</span>
+                <span class="modal-btn-label">${n.label}</span>
+            </div>
+        </button>
+    `).join('');
+
+        document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    function handleOverlayClick(e) {
+        if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
     });
 </script>
 
