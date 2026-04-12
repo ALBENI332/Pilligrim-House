@@ -322,70 +322,72 @@ $accent-border: #AC8A67;
         border-radius: 20px;
     }
 
-        &__box {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            border-radius: 10px;
-            width: 488px;
-            height: 288px;
-            box-shadow: 0 0 16px 0 rgba(255, 237, 237, 0.25);
-            background: #ddd2c4;
-            text-align: center;
-            align-items: center;
-            cursor: pointer;
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 10px;
+        width: 488px;
+        height: 288px;
+        box-shadow: 0 0 16px 0 rgba(255, 237, 237, 0.25);
+        background: #ddd2c4;
+        text-align: center;
+        align-items: center;
+        cursor: pointer;
 
-            &-title {
+
+
+        &-title {
+            font-family: 'FKT Gnarly', sans-serif;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 100%;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+            color: #1f1b18;
+        }
+
+        &-minibox {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+            margin-right: 65px;
+            margin-bottom: 30px;
+
+
+            &-dec {
                 font-family: 'FKT Gnarly', sans-serif;
                 font-weight: 400;
-                font-size: 48px;
-                line-height: 100%;
-                letter-spacing: -0.02em;
-                text-transform: capitalize;
-                color: #1f1b18;
-            }
-
-            &-minibox {
-                display: flex;
-                gap: 20px;
-                align-items: center;
+                font-size: 24px;
                 text-align: center;
-                margin-right: 65px;
-                margin-bottom: 30px;
-
-
-                &-dec {
-                    font-family: 'FKT Gnarly', sans-serif;
-                    font-weight: 400;
-                    font-size: 24px;
-                    text-align: center;
-                    color: #3a342e;
-                    line-height: 1.4;
-                    margin: 0;
-                    line-height: 1.2;
-                    white-space: nowrap
-                }
+                color: #3a342e;
+                line-height: 1.4;
+                margin: 0;
+                line-height: 1.2;
+                white-space: nowrap
             }
         }
+    }
 
-        &__boxes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            row-gap: 200px;
-        }
+    &__boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 200px;
+    }
 
-        &__boxes1 {
-            display: flex;
-            
-            gap: 20px;
-        }
+    &__boxes1 {
+        display: flex;
 
-        &__boxes2 {
-            display: flex;
-            
-            gap: 20px;
-        }
+        gap: 20px;
+    }
+
+    &__boxes2 {
+        display: flex;
+
+        gap: 20px;
+    }
 }
 
 .modal-overlay {
@@ -586,6 +588,7 @@ $accent-border: #AC8A67;
         color: #1f1b18;
     }
 
+    &__button-hall,
     &__button-11,
     &__button-12,
     &__button-13,
@@ -700,10 +703,12 @@ body {
 }
 
 .room {
+    display: flex;
+    align-items: center;
     &__content {
         display: flex;
         gap: 39px;
-
+        align-items: center;
     }
 
     &__details {
@@ -1088,6 +1093,7 @@ body {
 
 // Маленький мобильный (380px)
 @media (max-width: 380px) {
+
     .header__mark-home,
     .header__mark-rooms,
     .header__mark-gallery,

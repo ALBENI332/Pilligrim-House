@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <img src="./img/logo.png" alt="" class="header__logo">
+                <button class="burger" id="burger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header__list" id="headerList">
+                    <li class="header__mark-home">Home</li>
+                    <li style="background: #a9825a; color: white;" class="header__mark-rooms">Rooms</li>
+                    <li class="header__mark-gallery">Gallery</li>
+                    <li class="header__mark-contact">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <br><br><br><br>
+    <div class="room">
+        <div class="container">
+            <div class="room__content">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="./img/Hall/DSC_0513.JPG" class="active" alt="Conference Hall view 1" />
+                        <img src="./img/Hall/DSC_0514.JPG" alt="Conference Hall view 2" />
+                        <img src="./img/Hall/DSC_0515.JPG" alt="Conference Hall view 3" />
+                        <img src="./img/Hall/DSC_0516.JPG" alt="Conference Hall view 4" />
+                    </div>
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+
+                    <div class="thumbnails">
+                        <img src="./img/Hall/DSC_0513.JPG" class="active" alt="Conference Hall thumbnail 1" />
+                        <img src="./img/Hall/DSC_0514.JPG" alt="Conference Hall thumbnail 2" />
+                        <img src="./img/Hall/DSC_0515.JPG" alt="Conference Hall thumbnail 3" />
+                        <img src="./img/Hall/DSC_0516.JPG" alt="Conference Hall thumbnail 4" />
+                    </div>
+                </div>
+                <div class="room__details">
+                    <div class="room__details-main">
+                        <h2 class="room__details-title">Conference Halls</h2>
+
+                        <h3 class="room__details-subtitle">Second floor</h3>
+
+                        <h2 class="room__card-price"> 60$ per day (not night)</h2>
+
+                        <div class="room__details-win">
+                            <button class="room__details-win-btn">Projector <img src="./img/Hall/projector.svg"
+                                    alt=""></button>
+                            <button class="room__details-win-btn">Bluetooth speakers <img
+                                    src="./img/Hall/speaker-bluetooth.svg" alt=""></button>
+                            <button class="room__details-win-btn">Whiteboard<img src="./img/Hall/whiteboard.png"
+                                    alt=""></button>
+                            <button class="room__details-win-btn">Wi-Fi </button>
+                        </div>
+
+                    </div>
+
+                    <div class="description">
+                        <h3 class="description_title">Description</h3>
+                        <p class="dec">A conference room with comfortable chairs, pull-out
+                            tables, and a kitchenette. <br> A full audio system (microphones, Bluetooth, multi-speaker) and <br>
+                            air conditioning ensure comfortable work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <iframe class="footer__map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.2076330803125!2d74.57041711224339!3d42.72937587104077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389935b0e78e4359%3A0xfdf7c2ca2e9250ec!2sRetreat%20house%20%22House%20of%20Pilgrim%22!5e1!3m2!1sen!2skg!4v1775833616691!5m2!1sen!2skg"
+                    width="600" height="450" allowfullscreen=""
+                    title="Google Maps location of House of Pilgrim"></iframe>
+                <div class="foter__boxes">
+                    <div class="footer__boxes1">
+                        <div class="footer__box">
+                            <h3 class="footer__box-title">Address</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/adress.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">Bolnichnaya 62</p>
+                                    <p class="footer__box-minibox-dec">Bishkek, Kyrgyzstan</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer__box" onclick="openModal('whatsapp')">
+                            <h3 class="footer__box-title">Whatsapp</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/whatsapp.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="footer__boxes2">
+                        <div class="footer__box" onclick="openModal('telegram')">
+                            <h3 class="footer__box-title">Telegram</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/telegram.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer__box" onclick="openModal('contacts')">
+                            <h3 class="footer__box-title">Сontacts</h3>
+                            <div class="footer__box-minibox">
+                                <img src="./img/phone.png" alt="">
+                                <div class="footer__box-numbers">
+                                    <p class="footer__box-minibox-dec">+996 (550) 98 21 21</p>
+                                    <p class="footer__box-minibox-dec">+996 (555) 52 08 58</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </footer>
+    <br><br><br>
+    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+        <div class="modal-window" id="modalWindow">
+            <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-subtitle" id="modalSubtitle">Выберите номер для связи</p>
+            <div class="modal-numbers" id="modalNumbers"></div>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelectorAll(".slides img");
+        const thumbs = document.querySelectorAll(".thumbnails img");
+        const next = document.querySelector(".next");
+        const prev = document.querySelector(".prev");
+
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach(s => s.classList.remove("active"));
+            thumbs.forEach(t => t.classList.remove("active"));
+
+            slides[i].classList.add("active");
+            thumbs[i].classList.add("active");
+        }
+
+        next.addEventListener("click", () => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        });
+
+        prev.addEventListener("click", () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        });
+
+        thumbs.forEach((thumb, i) => {
+            thumb.addEventListener("click", () => {
+                index = i;
+                showSlide(index);
+            });
+        });
+
+        const homeBtn = document.querySelector('.header__mark-home');
+        const logoBtn = document.querySelector('.header__logo');
+        const galleryBtn = document.querySelector('.header__mark-gallery');
+        const heroContactBtn = document.querySelector('.header__mark-contact');
+        const roomsBtn = document.querySelector('.header__mark-rooms');
+        roomsBtn.addEventListener('click', () => {
+            window.location.href = 'rooms.html';
+        });
+        heroContactBtn.addEventListener('click', () => {
+            window.location.href = 'contact.html';
+        });
+
+        galleryBtn.addEventListener('click', () => {
+            window.location.href = 'gallery.html';
+        });
+
+        homeBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+        logoBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        function toggleMenu() {
+            document.getElementById('burger').classList.toggle('active');
+            document.getElementById('headerList').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.header__list li').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('burger').classList.remove('active');
+                document.getElementById('headerList').classList.remove('open');
+            });
+        });
+
+        const modalConfigs = {
+            whatsapp: {
+                icon: './img/whatsapp.png',
+                title: 'WhatsApp',
+                numbers: [
+                    { num: '+996 (550) 98 21 21', clean: '996550982121', label: 'Основной номер' },
+                    { num: '+996 (555) 52 08 58', clean: '996555520858', label: 'Основной номер' }
+                ],
+                getUrl: (clean) => `https://wa.me/${clean}`
+            },
+            telegram: {
+                icon: './img/telegram.png',
+                title: 'Telegram',
+                numbers: [
+                    { num: '+996 (550) 98 21 21', clean: '996550982121', label: 'Основной номер' },
+                    { num: '+996 (555) 52 08 58', clean: '996555520858', label: 'Основной номер' }
+                ],
+                getUrl: (clean) => `https://t.me/+${clean}`
+            },
+            contacts: {
+                icon: './img/phone.png',
+                title: 'Позвонить',
+                numbers: [
+                    { num: '+996 (550) 98 21 21', clean: '+996550982121', label: 'Основной номер' },
+                    { num: '+996 (555) 52 08 58', clean: '+996555520858', label: 'Основной номер' }
+                ],
+                getUrl: (clean) => `tel:${clean}`
+            }
+        };
+
+        function openModal(type) {
+            const cfg = modalConfigs[type];
+            document.getElementById('modalIcon').innerHTML = `<img src="${cfg.icon}" alt="${cfg.title}">`;
+            document.getElementById('modalTitle').textContent = cfg.title;
+
+            document.getElementById('modalNumbers').innerHTML = cfg.numbers.map(n => `
+        <button class="modal-btn" onclick="window.location.href='${cfg.getUrl(n.clean)}'">
+            <div class="modal-btn-icon"><img src="${cfg.icon}" alt=""></div>
+            <div>
+                <span class="modal-btn-num">${n.num}</span>
+                <span class="modal-btn-label">${n.label}</span>
+            </div>
+        </button>
+    `).join('');
+
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+
+</html>

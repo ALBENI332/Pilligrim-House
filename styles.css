@@ -497,7 +497,7 @@
   letter-spacing: -0.02em;
   color: #1f1b18;
 }
-.room-card__button-11, .room-card__button-12, .room-card__button-13, .room-card__button-21, .room-card__button-22, .room-card__button-23, .room-card__button-24, .room-card__button-25, .room-card__button-26 {
+.room-card__button-hall, .room-card__button-11, .room-card__button-12, .room-card__button-13, .room-card__button-21, .room-card__button-22, .room-card__button-23, .room-card__button-24, .room-card__button-25, .room-card__button-26 {
   display: inline-block;
   background-color: #b89a7a;
   color: #ffffff;
@@ -508,7 +508,7 @@
   transition: 0.3s ease;
   font-family: "FKT Gnarly", sans-serif;
 }
-.room-card__button-11:hover, .room-card__button-12:hover, .room-card__button-13:hover, .room-card__button-21:hover, .room-card__button-22:hover, .room-card__button-23:hover, .room-card__button-24:hover, .room-card__button-25:hover, .room-card__button-26:hover {
+.room-card__button-hall:hover, .room-card__button-11:hover, .room-card__button-12:hover, .room-card__button-13:hover, .room-card__button-21:hover, .room-card__button-22:hover, .room-card__button-23:hover, .room-card__button-24:hover, .room-card__button-25:hover, .room-card__button-26:hover {
   background-color: rgb(149.625, 115.875, 79.875);
   transform: translateY(-2px);
 }
@@ -587,9 +587,14 @@ body {
   color: #1f1b18;
 }
 
+.room {
+  display: flex;
+  align-items: center;
+}
 .room__content {
   display: flex;
   gap: 39px;
+  align-items: center;
 }
 .room__details {
   display: flex;
