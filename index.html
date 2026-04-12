@@ -47,28 +47,28 @@
                 <div class="info__content">
 
                     <div class="info__box">
-                        <img src="./img/kitchen.png" alt="" class="info__img">
+                        <img style="width: 34px;" src="./img/kitchen.png" alt="" class="info__img">
                         <h3 class="info__box-title">Kitchen </h3>
                         <p class="info__box-dec">Fully equipped kitchen with modern appliances and ample workspace for
-                            meal preparation.</p>
+                            meal preparation. <span class="info__box-dec-highlight" id="kitchen-more">More info</span></p>
                     </div>
 
                     <div class="info__box">
-                        <img src="./img/wifi.png" alt="" class="info__img">
+                        <img style="width: 34px;" src="./img/wifi.png" alt="" class="info__img">
                         <h3 class="info__box-title">WI-FI</h3>
                         <p class="info__box-dec">High-speed Wi-Fi is available throughout the property so you can stay
                             connected for work and leisure.</p>
                     </div>
 
                     <div class="info__box">
-                        <img src="./img/hall.png" alt="" class="info__img">
+                        <img style="width: 34px;" src="./img/hall.png" alt="" class="info__img">
                         <h3 class="info__box-title">Conference Hall</h3>
                         <p class="info__box-dec">A modern conference hall designed for business events, offering comfort
                             and fully equipped facilities</p>
                     </div>
 
                     <div class="info__box">
-                        <img src="./img/badroom.png" alt="" class="info__img">
+                        <img style="width: 34px;" src="./img/badroom.png" alt="" class="info__img">
                         <h3 class="info__box-title">Comfortable Bedrooms</h3>
                         <p class="info__box-dec1">Rooms where comfort and coziness create a calm and pleasant atmosphere
                             for relaxation.</p>
@@ -76,6 +76,28 @@
                 </div>
             </div>
         </section>
+        <div class="modal" id="kitchen-modal">
+            <div class="modal__content">
+                <button class="modal__close" id="close-modal">&times;</button>
+
+                <h2 class="modal__title">Kitchen</h2>
+                <div class="modal__info">
+                    <div class="modal__item">
+                        <span class="modal__label">Meals (breakfast, lunch, dinner)</span>
+                        <span class="modal__price">1200 som per person</span>
+                    </div>
+                    <div class="modal__item">
+                        <span class="modal__label">Coffee-break</span>
+                        <span class="modal__price">200 som per person</span>
+                    </div>
+                </div>
+
+                <p class="modal__description">
+                    Our fully equipped kitchen is available for your comfort.
+                    You can enjoy delicious meals prepared by our staff or use the kitchen yourself.
+                </p>
+            </div>
+        </div>
         <br><br><br><br><br>
         <section class="photoes">
             <div class="container">
@@ -286,6 +308,40 @@
             document.getElementById('headerList').classList.remove('open');
         });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const moreBtn = document.getElementById('kitchen-more');
+    const modal = document.getElementById('kitchen-modal');
+    const closeBtn = document.getElementById('close-modal');
+
+    // Открытие модального окна
+    moreBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // блокируем скролл
+    });
+
+    // Закрытие по кнопке
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'visible';
+    });
+
+    // Закрытие при клике вне окна
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'visible';
+        }
+    });
+
+    // Закрытие по клавише ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'visible';
+        }
+    });
+});
 </script>
 
 </html>

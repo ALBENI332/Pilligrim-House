@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   font-family: "FKT Gnarly", sans-serif;
@@ -220,6 +221,153 @@
   margin-bottom: 20px;
 }
 
+.info__box {
+  background: #ddd2c4;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.info__box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.info__box .info__img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.info__box .info__box-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+.info__box .info__box-dec {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+.info__box .info__box-dec .info__box-dec-highlight {
+  color: #c48c5a;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.info__box .info__box-dec .info__box-dec-highlight:hover {
+  color: #a36f42;
+}
+
+/* ====================== MODAL ====================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal.active {
+  display: flex;
+  opacity: 1;
+}
+.modal__content {
+  background: #ddd2c4;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 35px 30px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.modal.active .modal__content {
+  transform: scale(1);
+}
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s;
+}
+.modal__close:hover {
+  color: #c48c5a;
+}
+.modal__title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+.modal__info {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+.modal__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal__item:last-child {
+  border-bottom: none;
+}
+.modal__label {
+  font-weight: 500;
+  color: #444;
+  font-size: 1.05rem;
+}
+.modal__price {
+  font-weight: 600;
+  color: #c48c5a;
+  font-size: 1.1rem;
+}
+.modal__description {
+  text-align: center;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Адаптив */
+@media (max-width: 576px) {
+  .modal {
+    padding: 15px;
+  }
+  .modal__content {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  .modal__title {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 380px) {
+  .modal__content {
+    padding: 25px 18px;
+  }
+}
 .photoes__content {
   display: flex;
   flex-direction: column;
@@ -268,6 +416,11 @@
   text-align: center;
   align-items: center;
   cursor: pointer;
+}
+.footer__box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 .footer__box-title {
   font-family: "FKT Gnarly", sans-serif;
