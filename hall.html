@@ -20,7 +20,7 @@
                 </button>
                 <ul class="header__list" id="headerList">
                     <li class="header__mark-home">Home</li>
-                    <li style="background: #a9825a; color: white;" class="header__mark-rooms">Rooms</li>
+                    <li style="c background: #a9825a; color: white;" class="header__mark-rooms">Rooms</li>
                     <li class="header__mark-gallery">Gallery</li>
                     <li class="header__mark-contact">Contact</li>
                 </ul>
@@ -88,7 +88,7 @@
                     title="Google Maps location of House of Pilgrim"></iframe>
                 <div class="foter__boxes">
                     <div class="footer__boxes1">
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openMap()">
                             <h3 class="footer__box-title">Address</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/adress.png" alt="">
@@ -279,6 +279,9 @@
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeModal();
         });
+         function openMap() {
+    window.open("https://maps.app.goo.gl/WkPkUoXocUw47aSb9", "_blank");
+}
     </script>
 </body>
 

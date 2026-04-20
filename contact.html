@@ -20,7 +20,7 @@
                     <li class="header__mark-home">Home</li>
                     <li class="header__mark-rooms">Rooms</li>
                     <li class="header__mark-gallery">Gallery</li>
-                    <li  style="background: #a9825a; color: white;" class="header__mark-contact">Contact</li>
+                    <li  style="padding: 17px 25px; background: #a9825a; color: white;" class="header__mark-contact">Contact</li>
                 </ul> 
             </div>
         </div>
@@ -30,6 +30,10 @@
         <h2 class="get__title">
             Get In Touch
         </h2>
+        <p class="get__subtitle">
+            "A trip to Piligrim House is a journey to peace and comfort. If you need help with directions or have any accommodation requests, we is always ready to assist. We'll make everything ready for your visit so you feel right at home. See you soon!"
+        </p>
+    </section>
         <footer class="footer">
         <div class="container">
             <div class="footer__content">
@@ -39,7 +43,7 @@
                     title="Google Maps location of House of Pilgrim"></iframe>
                 <div class="foter__boxes">
                     <div class="footer__boxes1">
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openMap()">
                             <h3 class="footer__box-title">Address</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/adress.png" alt="">
@@ -197,5 +201,8 @@ document.querySelectorAll('.header__list li').forEach(item => {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeModal();
     });
+     function openMap() {
+    window.open("https://maps.app.goo.gl/WkPkUoXocUw47aSb9", "_blank");
+}
 </script>
 </html>

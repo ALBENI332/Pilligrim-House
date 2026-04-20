@@ -19,7 +19,8 @@
                     <span></span>
                 </button>
                 <ul class="header__list" id="headerList">
-                    <li style="background: #a9825a; color: white;" class="header__mark-home">Home</li>
+                    <li style="padding: 17px 20px;  background: #a9825a; color: white;" class="header__mark-home">Home
+                    </li>
                     <li class="header__mark-rooms">Rooms</li>
                     <li class="header__mark-gallery">Gallery</li>
                     <li class="header__mark-contact">Contact</li>
@@ -32,7 +33,7 @@
         <section class="hero">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title"> Welcome to <br>      
+                    <h1 class="hero__title"> Welcome to <br>
                         Pilgrim House </h1>
                     <div class="hero__btns">
                         <button class="hero__btn-rooms" type="button" title="Book Now">Rooms</button>
@@ -47,7 +48,7 @@
                 <div class="info__content">
 
                     <div class="info__box">
-                        <img style="width: 34px;" src="./img/dish.svg" alt="" class="info__img">
+                        <img style="width: 68px;" src="./img/dish.svg" alt="" class="info__img">
                         <h3 class="info__box-title">Dining room </h3>
                         <p class="info__box-dec">A spacious hall with flexible furniture for 28–35 persons. The space
                             can easily be transformed to accommodate any format—from a classic banquet to a casual
@@ -55,22 +56,25 @@
                     </div>
 
                     <div class="info__box">
-                        <img style="width: 45px;" src="./img/bench.svg" alt="" class="info__img">
+                        <img style="width: 90px;" src="./img/bench.svg" alt="" class="info__img">
                         <h3 class="info__box-title">Territory</h3>
                         <p class="info__box-dec">Covered parking, security alarm, BBQ zone and a cozy outdoor patio with
                             tables behind the building. Benches throughout the grounds for comfortable relaxation.</p>
                     </div>
 
                     <div class="info__box">
-                        <img style="width: 34px;" src="./img/hall.png" alt="" class="info__img">
+                        <img style="width: 68px;" src="./img/dooricon.webp" alt="" class="info__img">
                         <h3 class="info__box-title">Conference Hall</h3>
-                        <p class="info__box-dec">A modern conference hall seating 35–40 people and fully equipped with technical features. This flexible space easily adapts to any event format..</p>
+                        <p class="info__box-dec">A modern conference hall seating 35–40 people and fully equipped with
+                            technical features. This flexible space easily adapts to any event format..</p>
                     </div>
 
                     <div class="info__box">
-                        <img style="width: 34px;" src="./img/badroom.png" alt="" class="info__img">
+                        <img style="width: 68px;" src="./img/bed icon.svg" alt="" class="info__img">
                         <h3 class="info__box-title">Comfortable Bedrooms</h3>
-                        <p class="info__box-dec1">Cozy rooms with soft lighting and thoughtful decor create an atmosphere of complete tranquility. An ideal space for those who value peace and quiet and quality rest.</p>
+                        <p class="info__box-dec1">Cozy rooms with soft lighting and thoughtful decor create an
+                            atmosphere of complete tranquility. An ideal space for those who value peace and quiet and
+                            quality rest.</p>
                     </div>
                 </div>
             </div>
@@ -136,7 +140,7 @@
                     title="Google Maps location of House of Pilgrim"></iframe>
                 <div class="foter__boxes">
                     <div class="footer__boxes1">
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openMap()">
                             <h3 class="footer__box-title">Address</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/adress.png" alt="">
@@ -342,6 +346,10 @@
             }
         });
     });
+
+    function openMap() {
+    window.open("https://maps.app.goo.gl/WkPkUoXocUw47aSb9", "_blank");
+}
 </script>
 
 </html>

@@ -20,10 +20,17 @@
   flex-direction: column;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #F8F5EE;
+}
 .header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 }
 .header__logo {
   cursor: pointer;
@@ -58,7 +65,7 @@
   color: #2b2b2b;
   list-style: none;
   cursor: pointer;
-  padding: 17px 10px;
+  padding: 17px 25px;
   border-radius: 10px;
 }
 .header__mark-rooms:hover {
@@ -420,7 +427,6 @@
 .footer__box:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
 }
 .footer__box-title {
   font-family: "FKT Gnarly", sans-serif;
@@ -619,30 +625,75 @@
   }
 }
 
-.room-card {
+.room-card-11,
+.room-card-12,
+.room-card-13,
+.room-card-21,
+.room-card-22,
+.room-card-23,
+.room-card-24,
+.room-card-25,
+.room-card-26,
+.room-card-hall {
   background-color: #e5ddd0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-.room-card__image {
+.room-card-11__image,
+.room-card-12__image,
+.room-card-13__image,
+.room-card-21__image,
+.room-card-22__image,
+.room-card-23__image,
+.room-card-24__image,
+.room-card-25__image,
+.room-card-26__image,
+.room-card-hall__image {
   width: 100%;
   aspect-ratio: 484/323;
   background-color: #ccc;
 }
-.room-card__image img {
+.room-card-11__image img,
+.room-card-12__image img,
+.room-card-13__image img,
+.room-card-21__image img,
+.room-card-22__image img,
+.room-card-23__image img,
+.room-card-24__image img,
+.room-card-25__image img,
+.room-card-26__image img,
+.room-card-hall__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-.room-card__footer {
+.room-card-11__footer,
+.room-card-12__footer,
+.room-card-13__footer,
+.room-card-21__footer,
+.room-card-22__footer,
+.room-card-23__footer,
+.room-card-24__footer,
+.room-card-25__footer,
+.room-card-26__footer,
+.room-card-hall__footer {
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.room-card__title {
+.room-card-11__title,
+.room-card-12__title,
+.room-card-13__title,
+.room-card-21__title,
+.room-card-22__title,
+.room-card-23__title,
+.room-card-24__title,
+.room-card-25__title,
+.room-card-26__title,
+.room-card-hall__title {
   font-family: "FKT Gnarly", sans-serif;
   font-weight: 550;
   font-size: 24px;
@@ -650,7 +701,16 @@
   letter-spacing: -0.02em;
   color: #1f1b18;
 }
-.room-card__button-hall, .room-card__button-11, .room-card__button-12, .room-card__button-13, .room-card__button-21, .room-card__button-22, .room-card__button-23, .room-card__button-24, .room-card__button-25, .room-card__button-26 {
+.room-card-11__button,
+.room-card-12__button,
+.room-card-13__button,
+.room-card-21__button,
+.room-card-22__button,
+.room-card-23__button,
+.room-card-24__button,
+.room-card-25__button,
+.room-card-26__button,
+.room-card-hall__button {
   display: inline-block;
   background-color: #b89a7a;
   color: #ffffff;
@@ -661,7 +721,16 @@
   transition: 0.3s ease;
   font-family: "FKT Gnarly", sans-serif;
 }
-.room-card__button-hall:hover, .room-card__button-11:hover, .room-card__button-12:hover, .room-card__button-13:hover, .room-card__button-21:hover, .room-card__button-22:hover, .room-card__button-23:hover, .room-card__button-24:hover, .room-card__button-25:hover, .room-card__button-26:hover {
+.room-card-11__button:hover,
+.room-card-12__button:hover,
+.room-card-13__button:hover,
+.room-card-21__button:hover,
+.room-card-22__button:hover,
+.room-card-23__button:hover,
+.room-card-24__button:hover,
+.room-card-25__button:hover,
+.room-card-26__button:hover,
+.room-card-hall__button:hover {
   background-color: rgb(149.625, 115.875, 79.875);
   transform: translateY(-2px);
 }
@@ -706,9 +775,6 @@ body {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease-out;
-}
-.gallery-item:hover img {
-  transform: scale(1.06);
 }
 @media (max-width: 768px) {
   .gallery .gallery-grid {
@@ -1288,6 +1354,119 @@ body {
   .footer__box-title {
     font-size: 22px;
   }
+}
+.gallery-item img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Модалка */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 190px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.gallery-modal.active {
+  display: block;
+}
+
+.gallery-modal-img {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: 60vh;
+  object-fit: contain;
+}
+
+/* Закрыть */
+.gallery-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Кнопки */
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.gallery-prev {
+  left: 20px;
+}
+
+.gallery-next {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .gallery-modal {
+    padding: 10px;
+  }
+  .gallery-modal-img {
+    margin-top: 135px;
+    max-width: 100%;
+    max-height: 85vh;
+  }
+  .gallery-modal .gallery-close {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+  .gallery-modal .gallery-prev,
+  .gallery-modal .gallery-next {
+    font-size: 30px;
+    padding: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .gallery-modal-img {
+    max-height: 80vh;
+  }
+  .gallery-modal .gallery-prev {
+    left: 5px;
+  }
+  .gallery-modal .gallery-next {
+    right: 5px;
+  }
+}
+.get__subtitle {
+  /* Ограничиваем ширину, чтобы текст не растягивался на весь экран */
+  max-width: 700px;
+  margin: 0 auto 40px; /* Центрируем блок и даем отступ снизу до карточек */
+  /* Шрифты и текст */
+  font-family: inherit; /* Использует шрифт вашего сайта */
+  font-size: 18px;
+  line-height: 1.6; /* Увеличиваем расстояние между строками для читаемости */
+  color: #4a4a4a; /* Делаем цвет чуть мягче черного */
+  text-align: center;
+  /* Убираем кавычки, если они были частью текста, либо стилизуем их */
+  font-style: italic; /* Легкий курсив добавит душевности */
+  font-weight: 400;
+  /* Опционально: немного разрядим буквы */
+  letter-spacing: 0.2px;
 }
 
 /*# sourceMappingURL=styles.css.map */

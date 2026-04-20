@@ -42,10 +42,16 @@ $desc-bg: #E4D8CE;
 $accent-border: #AC8A67;
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: $bg-color;
+
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 20px;
     }
 
     &__logo {
@@ -85,7 +91,7 @@ $accent-border: #AC8A67;
         color: #2b2b2b;
         list-style: none;
         cursor: pointer;
-        padding: 17px 10px;
+        padding: 17px 25px;
         border-radius: 10px;
 
         &:hover {
@@ -506,10 +512,10 @@ $accent-border: #AC8A67;
         align-items: center;
         cursor: pointer;
 
+
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
         }
 
 
@@ -729,7 +735,17 @@ $accent-border: #AC8A67;
     }
 }
 
-.room-card {
+
+.room-card-11,
+.room-card-12,
+.room-card-13,
+.room-card-21,
+.room-card-22,
+.room-card-23,
+.room-card-24,
+.room-card-25,
+.room-card-26,
+.room-card-hall {
     background-color: $card-bg;
     border-radius: 12px;
     overflow: hidden;
@@ -764,16 +780,7 @@ $accent-border: #AC8A67;
         color: #1f1b18;
     }
 
-    &__button-hall,
-    &__button-11,
-    &__button-12,
-    &__button-13,
-    &__button-21,
-    &__button-22,
-    &__button-23,
-    &__button-24,
-    &__button-25,
-    &__button-26 {
+    &__button {
         display: inline-block;
         background-color: $btn-color;
         color: #ffffff;
@@ -835,10 +842,6 @@ body {
             object-fit: cover;
             display: block;
             transition: transform 0.4s ease-out;
-        }
-
-        &:hover img {
-            transform: scale(1.06);
         }
     }
 
@@ -1554,4 +1557,131 @@ body {
     .footer__box-title {
         font-size: 22px;
     }
+}
+
+.gallery-item img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Модалка */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 190px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.gallery-modal.active {
+    display: block;
+}
+
+.gallery-modal-img {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 60vh;
+    object-fit: contain;
+}
+
+/* Закрыть */
+.gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Кнопки */
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.gallery-prev {
+    left: 20px;
+}
+
+.gallery-next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .gallery-modal {
+        padding: 10px;
+
+        &-img {
+            margin-top: 135px;
+            max-width: 100%;
+            max-height: 85vh;
+        }
+
+        .gallery-close {
+            font-size: 30px;
+            top: 10px;
+            right: 15px;
+        }
+
+        .gallery-prev,
+        .gallery-next {
+            font-size: 30px;
+            padding: 5px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-modal {
+
+        &-img {
+            max-height: 80vh;
+        }
+
+        .gallery-prev {
+            left: 5px;
+        }
+
+        .gallery-next {
+            right: 5px;
+        }
+    }
+}
+
+.get__subtitle {
+    /* Ограничиваем ширину, чтобы текст не растягивался на весь экран */
+    max-width: 700px;
+    margin: 0 auto 40px; /* Центрируем блок и даем отступ снизу до карточек */
+    
+    /* Шрифты и текст */
+    font-family: inherit; /* Использует шрифт вашего сайта */
+    font-size: 18px;
+    line-height: 1.6; /* Увеличиваем расстояние между строками для читаемости */
+    color: #4a4a4a; /* Делаем цвет чуть мягче черного */
+    text-align: center;
+    
+    /* Убираем кавычки, если они были частью текста, либо стилизуем их */
+    font-style: italic; /* Легкий курсив добавит душевности */
+    font-weight: 400;
+    
+    /* Опционально: немного разрядим буквы */
+    letter-spacing: 0.2px;
 }

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -9,6 +10,15 @@
 </head>
 
 <body>
+
+
+    <div class="gallery-modal" id="galleryModal">
+        <span class="gallery-close" onclick="closeGallery()">×</span>
+        <img class="gallery-modal-img" id="galleryModalImg">
+
+        <button class="gallery-prev" onclick="changeSlide(-1)">❮</button>
+        <button class="gallery-next" onclick="changeSlide(1)">❯</button>
+    </div>
     <header class="header">
         <div class="container">
             <div class="header__content">
@@ -21,9 +31,10 @@
                 <ul class="header__list" id="headerList">
                     <li class="header__mark-home">Home</li>
                     <li class="header__mark-rooms">Rooms</li>
-                    <li  style="background: #a9825a; color: white;" class="header__mark-gallery">Gallery</li>
-                    <li  class="header__mark-contact">Contact</li>
-                </ul> 
+                    <li style="padding: 17px 25px; background: #a9825a; color: white;" class="header__mark-gallery">
+                        Gallery</li>
+                    <li class="header__mark-contact">Contact</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -108,6 +119,7 @@
 
         </section>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
@@ -117,7 +129,7 @@
                     title="Google Maps location of House of Pilgrim"></iframe>
                 <div class="foter__boxes">
                     <div class="footer__boxes1">
-                        <div class="footer__box">
+                        <div class="footer__box" onclick="openMap()">
                             <h3 class="footer__box-title">Address</h3>
                             <div class="footer__box-minibox">
                                 <img src="./img/adress.png" alt="">
@@ -171,7 +183,7 @@
             </div>
         </div>
     </footer>
-     <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
         <div class="modal-window" id="modalWindow">
             <button class="modal-close" onclick="closeModal()">&#x2715;</button>
             <div class="modal-icon" id="modalIcon"></div>
@@ -188,7 +200,7 @@
     const roomsBtn = document.querySelector('.header__mark-rooms');
     const heroContactBtn = document.querySelector('.header__mark-contact');
 
-     heroContactBtn.addEventListener('click', () => {
+    heroContactBtn.addEventListener('click', () => {
         window.location.href = 'contact.html';
     });
 
@@ -203,18 +215,18 @@
         window.location.href = 'index.html';
     });
     function toggleMenu() {
-    document.getElementById('burger').classList.toggle('active');
-    document.getElementById('headerList').classList.toggle('open');
-}
+        document.getElementById('burger').classList.toggle('active');
+        document.getElementById('headerList').classList.toggle('open');
+    }
 
-document.querySelectorAll('.header__list li').forEach(item => {
-    item.addEventListener('click', () => {
-        document.getElementById('burger').classList.remove('active');
-        document.getElementById('headerList').classList.remove('open');
+    document.querySelectorAll('.header__list li').forEach(item => {
+        item.addEventListener('click', () => {
+            document.getElementById('burger').classList.remove('active');
+            document.getElementById('headerList').classList.remove('open');
+        });
     });
-});
 
- const modalConfigs = {
+    const modalConfigs = {
         whatsapp: {
             icon: './img/whatsapp.png',
             title: 'WhatsApp',
@@ -243,6 +255,8 @@ document.querySelectorAll('.header__list li').forEach(item => {
             getUrl: (clean) => `tel:${clean}`
         }
     };
+
+
 
     function openModal(type) {
         const cfg = modalConfigs[type];
@@ -273,6 +287,50 @@ document.querySelectorAll('.header__list li').forEach(item => {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeModal();
     });
+
+    const images = document.querySelectorAll('.gallery-item img');
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('galleryModalImg');
+
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            openGallery();
+        });
+    });
+
+    function openGallery() {
+        modal.classList.add('active');
+        modalImg.src = images[currentIndex].src;
+    }
+
+    function closeGallery() {
+        modal.classList.remove('active');
+    }
+
+    function changeSlide(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
+
+        modalImg.src = images[currentIndex].src;
+    }
+
+    /* Закрытие по ESC */
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeGallery();
+    });
+
+    /* Клик вне картинки */
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeGallery();
+    });
+     function openMap() {
+    window.open("https://maps.app.goo.gl/WkPkUoXocUw47aSb9", "_blank");
+}
 </script>
 
 </html>
